@@ -1,0 +1,19 @@
+{
+  "name": "base-dev-env",
+  "version": "0.0.0",
+  "authors": [
+    "itakurakoichi <itakurakoichi.w@gmail.com>"
+  ],
+  "description": "bower",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
