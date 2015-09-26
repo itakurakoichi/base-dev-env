@@ -1,1 +1,11 @@
-# base-dev-env
+base-dev-env
+======================
+
+## summary
+
+local development environment
+
+## detail
+
+* gulp
+* bower
