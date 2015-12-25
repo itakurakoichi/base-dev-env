@@ -1,24 +1,34 @@
 var gulp = require('gulp');
 var pkg = require('./package.json');
-
+var webserver = require('gulp-webserver');
 var plumber = require('gulp-plumber');
 var header = require('gulp-header');
-var webserver = require('gulp-webserver');
+// var rename = require('gulp-rename');
+// var stripDebug = require('gulp-strip-debug');
+// var replace = require('gulp-replace');
 // var notify = require('gulp-notify');
 
-var imagemin = require('gulp-imagemin');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+// --- Concat&Compile
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
+// --- Compress
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 var minifycss = require('gulp-minify-css');
+// --- Check
+// var jshint = require('gulp-jshint');
+// var htmlhint = require('gulp-htmlhint');
+// --- Optimize
+var imagemin = require('gulp-imagemin');
+// var pngquant = require('imagemin-pngquant');
 
+// --- Path
 var paths = {
 	src: 'src',
 	dist: 'dist'
 }
 
-// tasks
+// Tasks
 gulp.task('html', function() {
 	gulp
 		.src(paths.src + '/jade/*.jade')
