@@ -4,7 +4,7 @@ var webserver = require('gulp-webserver');
 var plumber = require('gulp-plumber');
 var header = require('gulp-header');
 // var rename = require('gulp-rename');
-// var stripDebug = require('gulp-strip-debug');
+var stripDebug = require('gulp-strip-debug');
 // var replace = require('gulp-replace');
 // var notify = require('gulp-notify');
 
@@ -50,6 +50,7 @@ gulp.task('img', function() {
 gulp.task('js', function() {
 	gulp.src(paths.src + '/js/*.js')
 		.pipe(plumber())
+		.pipe(stripDebug())
 		.pipe(concat('base.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.dist + '/js'));
