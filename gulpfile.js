@@ -4,7 +4,7 @@ var webserver = require('gulp-webserver');
 var plumber = require('gulp-plumber');
 var header = require('gulp-header');
 // var rename = require('gulp-rename');
-// var stripDebug = require('gulp-strip-debug');
+var stripDebug = require('gulp-strip-debug');
 // var replace = require('gulp-replace');
 // var notify = require('gulp-notify');
 
@@ -30,8 +30,7 @@ var paths = {
 
 // Tasks
 gulp.task('html', function() {
-	gulp
-		.src([
+	gulp.src([
 			paths.src + '/jade/*.jade',
 			!paths.src + '/jade/tpl/*.jade'
 			])
@@ -43,24 +42,22 @@ gulp.task('html', function() {
 });
 
 gulp.task('img', function() {
-	gulp
-		.src(paths.src + '/img/*\.+(jpg|jpeg|png|gif)')
+	gulp.src(paths.src + '/img/*\.+(jpg|jpeg|png|gif)')
 		.pipe(imagemin())
 		.pipe(gulp.dest(paths.dist + '/img'));
 });
 
 gulp.task('js', function() {
-	gulp
-		.src(paths.src + '/js/*.js')
+	gulp.src(paths.src + '/js/*.js')
 		.pipe(plumber())
+		.pipe(stripDebug())
 		.pipe(concat('base.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.dist + '/js'));
 });
 
 gulp.task('css', function() {
-	gulp
-		.src(paths.src + '/stylus/*.styl')
+	gulp.src(paths.src + '/stylus/*.styl')
 		.pipe(plumber())
 		.pipe(stylus())
 		.pipe(minifycss())
@@ -74,8 +71,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('webserver', function() {
-	gulp
-		.src(paths.dist)
+	gulp.src(paths.dist)
 		.pipe(
 			webserver({
 				livereload: true
