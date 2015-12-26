@@ -31,9 +31,9 @@ var paths = {
 // Tasks
 gulp.task('html', function() {
 	gulp.src([
-			paths.src + '/jade/*.jade',
-			!paths.src + '/jade/tpl/*.jade'
-		])
+			'*.jade',
+			'!_*.jade'
+		], {cwd: paths.src + '/jade/'})
 		.pipe(plumber())
 		.pipe(jade({
 			pretty: true
