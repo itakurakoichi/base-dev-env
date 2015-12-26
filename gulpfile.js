@@ -66,6 +66,7 @@ gulp.task('css', function() {
 	gulp.src(paths.src + '/stylus/*.styl')
 		.pipe(plumber())
 		.pipe(stylus())
+		.pipe(gulp.dest(paths.src + '/css'))
 		.pipe(minifycss())
 		.pipe(gulp.dest(paths.dist + '/css'));
 });
