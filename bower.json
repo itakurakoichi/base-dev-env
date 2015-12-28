@@ -4,16 +4,10 @@
   "authors": [
     "itakurakoichi <itakurakoichi.w@gmail.com>"
   ],
-  "description": "bower",
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "~2.1.4"
-  }
+    "bower_components"
+  ]
 }
