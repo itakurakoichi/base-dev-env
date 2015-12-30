@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var stripDebug = require('gulp-strip-debug');
 var replace = require('gulp-replace');
 // var notify = require('gulp-notify');
-var bower = require('main-bower-files');
+var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
 
 // --- Concat&Compile
@@ -72,9 +72,14 @@ gulp.task('js', function() {
 });
 
 gulp.task('bowerJs', function() {
-	gulp.src(bower())
-		.pipe(filter('**/*.js'))
+	var jsFilter = filter('**/*.js');
+	gulp.src(mainBowerFiles())
+		.pipe(jsFilter)
 		.pipe(gulp.dest(paths.src + '/js'))
+		.pipe(uglify())
+		.pipe(rename({
+			suffix: ".min"
+		}))
 		.pipe(gulp.dest(paths.dist + '/js'));
 });
 
