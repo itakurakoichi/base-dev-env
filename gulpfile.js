@@ -76,6 +76,10 @@ gulp.task('bowerJs', function() {
 	gulp.src(mainBowerFiles())
 		.pipe(jsFilter)
 		.pipe(gulp.dest(paths.src + '/js'))
+		.pipe(uglify())
+		.pipe(rename({
+			suffix: ".min"
+		}))
 		.pipe(gulp.dest(paths.dist + '/js'));
 });
 
