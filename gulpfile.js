@@ -72,8 +72,9 @@ gulp.task('js', function() {
 });
 
 gulp.task('bowerJs', function() {
+	var jsFilter = filter('**/*.js');
 	gulp.src(bower())
-		.pipe(filter('**/*.js'))
+		.pipe(jsFilter)
 		.pipe(gulp.dest(paths.src + '/js'))
 		.pipe(gulp.dest(paths.dist + '/js'));
 });
