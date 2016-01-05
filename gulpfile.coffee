@@ -51,7 +51,7 @@ gulp.task 'img', ->
 
 gulp.task 'js', ->
 	gulp.src([
-			'*.js', '!base.js', '!jquery.js'
+			'*.js', '!base.js', '!jquery.js', '!bootstrap.js', '!bootstrap.min.js'
 		], {
 			cwd: paths.src + '/js/'
 		})
@@ -65,16 +65,17 @@ gulp.task 'js', ->
 		}))
 		.pipe(gulp.dest(paths.dist + '/js'))
 
-gulp.task 'bowerJs', ->
-	jsFilter = filter('**/*.js')
-	gulp.src(mainBowerFiles())
-		.pipe(jsFilter)
-		.pipe(gulp.dest(paths.src + '/js'))
-		.pipe(uglify())
-		.pipe(rename({
-			suffix: ".min"
-		}))
-		.pipe(gulp.dest(paths.dist + '/js'))
+# below only for jQuery files, so need to extend for bootstrap files
+# gulp.task 'bowerJs', ->
+# 	jsFilter = filter('**/*.js')
+# 	gulp.src(mainBowerFiles())
+# 		.pipe(jsFilter)
+# 		.pipe(gulp.dest(paths.src + '/js'))
+# 		.pipe(uglify())
+# 		.pipe(rename({
+# 			suffix: ".min"
+# 		}))
+# 		.pipe(gulp.dest(paths.dist + '/js'))
 
 gulp.task 'css', ->
 	gulp.src(paths.src + '/stylus/*.styl')
