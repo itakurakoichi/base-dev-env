@@ -1,10 +1,6 @@
 {
   "name": "base-dev-env",
   "version": "0.0.0",
-  "authors": [
-    "itakurakoichi <itakurakoichi.w@gmail.com>"
-  ],
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -12,6 +8,7 @@
   ],
   "main": [],
   "dependencies": {
-    "jquery": "jQuery#~2.1.4"
+    "jquery": "jQuery#~2.1.4",
+    "bootstrap": "~3.3.6"
   }
 }
