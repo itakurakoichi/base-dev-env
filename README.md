@@ -1,11 +1,17 @@
 base-dev-env
 ======================
 
-## summary
+## Summary
 
 local development environment
 
-## detail
+## Detail
 
-* gulp
-* bower
+* Do each process by task runner.
+	* gulp
+* Manage library files.
+	* bower
+* HTML Template Engine
+	* jade
+* CSS preprocessor
+	* Stylus
