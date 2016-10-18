@@ -1,5 +1,5 @@
 {
-  "name": "base-dev-env",
+  "name": "base-dev-env--gulp",
   "version": "1.0.0",
   "description": "local development environment",
   "main": "index.js",
