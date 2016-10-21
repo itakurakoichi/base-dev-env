@@ -1,13 +1,11 @@
-base-dev-env
+base-dev-env--gulp
 ======================
 
 ## Summary
-
 local development environment
 
 ## Detail
-
-* Do each process by task runner.
+* Task Runner
 	* gulp
 * Manage library files.
 	* bower
